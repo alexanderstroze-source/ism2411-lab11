@@ -43,3 +43,21 @@ for key, value in customer.items():
 # the key and its value on each pass.
 for key in customer:
     print(key)
+
+# --------Exercise 5--------
+tier_discounts = {"bronze": 0, "silver": 0.05, "gold": 0.10, "platinum": 0.15}
+tier = customer["tier"]
+discount_rate = tier_discounts.get(tier, 0)
+final_price = 200 * (1 - discount_rate)
+print(f"Tier: {tier}, discount: {discount_rate:.0%}, final price: ${final_price:.2f}")
+
+# --------Exercise 6--------
+customers = [
+    customer,
+    {"name": "Ben", "tier": "silver"},
+    {"name": "Maya", "tier": "gold"},
+]
+for record in customers:
+    tier = record["tier"]
+    discount_amount = 300 * tier_discounts.get(tier, 0)
+    print(f"{record['name']}, {tier}, discount: ${discount_amount:.2f}")
